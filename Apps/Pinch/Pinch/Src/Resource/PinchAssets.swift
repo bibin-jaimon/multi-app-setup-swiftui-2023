@@ -12,5 +12,9 @@ struct PinchAssets {
     static var magazineFrontCover: Image {
         return Image("magazine-front-cover")
     }
+    
+    static func getImage(name: String) -> Image {
+        return Image(name)
+    }
 }
 

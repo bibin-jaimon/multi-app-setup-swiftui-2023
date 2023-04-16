@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-public struct DrawerView: View {
+public struct DrawerView<Content: View>: View {
     
     @State private var isOpenDrawer: Bool = false
     var animating: Bool
+    let content: Content
     
     var imageName: String {
         isOpenDrawer ? "chevron.compact.right" : "chevron.compact.left"
@@ -29,26 +30,31 @@ public struct DrawerView: View {
                         isOpenDrawer.toggle()
                     }
                 })
-            
+            content
+                .opacity(isOpenDrawer ? 1 : 0)
+                .animation(.easeOut(duration: 0.5), value: isOpenDrawer)
             Spacer()
         }
         .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
         .background(.ultraThinMaterial)
         .cornerRadius(12)
-//        .opacity(animating ? 1 : 0)
         .frame(width: 260)
         .offset(x: isOpenDrawer ? 20 : 215)
     }
     
-    public init(animating: Bool) {
+    public init(animating: Bool, @ViewBuilder content: () -> Content) {
         self.animating = animating
+        self.content = content()
     }
 }
 
 struct DrawerView_Previews: PreviewProvider {
     static var previews: some View {
-        DrawerView(animating: true)
-            .preferredColorScheme(.dark)
-            .previewLayout(.sizeThatFits)
+        DrawerView(animating: true) {
+            Text("RenderIt")
+        }
+        .preferredColorScheme(.dark)
+        .previewLayout(.sizeThatFits)
+        
     }
 }

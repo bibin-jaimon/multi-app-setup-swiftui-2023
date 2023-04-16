@@ -23,6 +23,8 @@
 		57A8FE8D29C778EF00D4CBDD /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A8FE8C29C778EF00D4CBDD /* HomeScreen.swift */; };
 		57A8FE9129C77B6900D4CBDD /* StringsPluginAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 57A8FE9029C77B6900D4CBDD /* StringsPluginAPI */; };
 		57A8FE9329C7AF7B00D4CBDD /* ElementsPluginAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 57A8FE9229C7AF7B00D4CBDD /* ElementsPluginAPI */; };
+		57CA6D8729EBD941009F8893 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CA6D8629EBD941009F8893 /* PageModel.swift */; };
+		57CA6D8829EBD941009F8893 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CA6D8629EBD941009F8893 /* PageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		579272A829E085B7003B2809 /* PinchFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinchFramework.h; sourceTree = "<group>"; };
 		579272CC29E26715003B2809 /* PinchAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchAssets.swift; sourceTree = "<group>"; };
 		57A8FE8C29C778EF00D4CBDD /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		57CA6D8629EBD941009F8893 /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,7 @@
 		57A8FE8B29C7469D00D4CBDD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				57CA6D8629EBD941009F8893 /* PageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CA6D8729EBD941009F8893 /* PageModel.swift in Sources */,
 				5753B18129C6E1670019208B /* PinchApp.swift in Sources */,
 				579272CD29E26715003B2809 /* PinchAssets.swift in Sources */,
 				57A8FE8D29C778EF00D4CBDD /* HomeScreen.swift in Sources */,
@@ -310,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CA6D8829EBD941009F8893 /* PageModel.swift in Sources */,
 				579272B629E085FB003B2809 /* HomeScreen.swift in Sources */,
 				579272CE29E26715003B2809 /* PinchAssets.swift in Sources */,
 				579272B729E085FB003B2809 /* PinchApp.swift in Sources */,

@@ -14,6 +14,8 @@ public struct HomeScreen: View {
     @State private var imageScale: CGFloat = 1
     @State private var imageOffset: CGSize = .zero
     
+    let pages: [PageModel] = createPageData()
+    @State private var pageIndex: Int = 0
     public var body: some View {
         NavigationView {
             ZStack {
@@ -53,7 +55,7 @@ public struct HomeScreen: View {
 extension HomeScreen {
     
     private var mainImageContainer: some View {
-        PinchAssets.magazineFrontCover
+        PinchAssets.getImage(name: pages[pageIndex].imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .cornerRadius(10)
@@ -153,8 +155,22 @@ extension HomeScreen {
     }
     
     private var drawerViewOverlay: some View {
-        DrawerView(animating: isAnimating)
-            .padding(.top, UIScreen.main.bounds.height / 12)
+        DrawerView(animating: isAnimating) {
+            ForEach(pages) { item in
+                Image(item.thumbImageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80)
+                    .cornerRadius(8)
+                    .shadow(radius: 4)
+                    .onTapGesture {
+                        isAnimating = true
+                        pageIndex = item.id
+                    }
+                    
+            }
+        }
+        .padding(.top, UIScreen.main.bounds.height / 12)
     }
     
     private var infoPanelViewOverlay: some View {
