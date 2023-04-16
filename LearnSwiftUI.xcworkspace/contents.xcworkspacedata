@@ -12,12 +12,15 @@
       </FileRef>
    </Group>
    <FileRef
+      location = "group:Apps/LearningPath/LearningPath.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Apps/Pinch/Pinch.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Apps/Restart/Restart.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Apps/LearningPath/LearningPath.xcodeproj">
+      location = "group:Apps/Fructus/Fructus.xcodeproj">
    </FileRef>
 </Workspace>
