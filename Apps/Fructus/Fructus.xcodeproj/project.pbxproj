@@ -12,6 +12,7 @@
 		57CA6D9A29EC4F8B009F8893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CA6D9929EC4F8B009F8893 /* Assets.xcassets */; };
 		57CA6D9D29EC4F8B009F8893 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CA6D9C29EC4F8B009F8893 /* Preview Assets.xcassets */; };
 		57CA6DAA29EC58E9009F8893 /* ElementsPluginAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 57CA6DA929EC58E9009F8893 /* ElementsPluginAPI */; };
+		57CA6DAD29EC5EB1009F8893 /* FruitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CA6DAC29EC5EB1009F8893 /* FruitCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		57CA6D9929EC4F8B009F8893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57CA6D9C29EC4F8B009F8893 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57CA6DA729EC5879009F8893 /* ElementsPluginAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ElementsPluginAPI; path = ../../Plugins/ElementsPluginAPI; sourceTree = "<group>"; };
+		57CA6DAC29EC5EB1009F8893 /* FruitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		57CA6DA429EC5847009F8893 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				57CA6DAE29EC5EB7009F8893 /* Views */,
 				57CA6DAB29EC5A86009F8893 /* AppAssets */,
 				57CA6D9729EC4F88009F8893 /* FARootView.swift */,
 			);
@@ -101,6 +104,14 @@
 				57CA6D9929EC4F8B009F8893 /* Assets.xcassets */,
 			);
 			path = AppAssets;
+			sourceTree = "<group>";
+		};
+		57CA6DAE29EC5EB7009F8893 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57CA6DAC29EC5EB1009F8893 /* FruitCardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CA6DAD29EC5EB1009F8893 /* FruitCardView.swift in Sources */,
 				57CA6D9829EC4F88009F8893 /* FARootView.swift in Sources */,
 				57CA6D9629EC4F88009F8893 /* FructusApp.swift in Sources */,
 			);
