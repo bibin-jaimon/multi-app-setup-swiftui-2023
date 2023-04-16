@@ -58,7 +58,6 @@
 			children = (
 				57CA6DA429EC5847009F8893 /* Source */,
 				57CA6D9529EC4F88009F8893 /* FructusApp.swift */,
-				57CA6D9929EC4F8B009F8893 /* Assets.xcassets */,
 				57CA6D9B29EC4F8B009F8893 /* Preview Content */,
 			);
 			path = Fructus;
@@ -75,6 +74,7 @@
 		57CA6DA429EC5847009F8893 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				57CA6DAB29EC5A86009F8893 /* AppAssets */,
 				57CA6D9729EC4F88009F8893 /* FARootView.swift */,
 			);
 			path = Source;
@@ -93,6 +93,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57CA6DAB29EC5A86009F8893 /* AppAssets */ = {
+			isa = PBXGroup;
+			children = (
+				57CA6D9929EC4F8B009F8893 /* Assets.xcassets */,
+			);
+			path = AppAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

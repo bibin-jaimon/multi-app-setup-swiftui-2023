@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct FARootView: View {
-    var body: some View {
+public struct FARootView: View {
+    public var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -17,6 +17,8 @@ struct FARootView: View {
         }
         .padding()
     }
+    
+    public init() { }
 }
 
 struct FARootView_Previews: PreviewProvider {
