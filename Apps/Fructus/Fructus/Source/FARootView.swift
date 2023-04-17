@@ -9,13 +9,7 @@ import SwiftUI
 
 public struct FARootView: View {
     public var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        FAOnboardingScreen()
     }
     
     public init() { }

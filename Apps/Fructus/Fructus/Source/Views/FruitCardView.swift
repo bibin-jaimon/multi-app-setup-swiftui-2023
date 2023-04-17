@@ -9,6 +9,7 @@ import SwiftUI
 
 public struct FruitCardView: View {
     private let imageShadow: Color = Color(red: 0, green: 0, blue: 0, opacity: 0.15)
+    @State private var isAnimating: Bool = false
     
     public var body: some View {
         ZStack {
@@ -18,6 +19,7 @@ public struct FruitCardView: View {
                     .resizable()
                     .scaledToFit()
                     .shadow(color: imageShadow, radius: 8, x: 6, y: 8)
+                    .scaleEffect(isAnimating ? 1.0 : 0.6)
                 
                 Text("Blueberry")
                     .foregroundColor(.white)
@@ -51,6 +53,11 @@ public struct FruitCardView: View {
             } //: VStack
             .padding()
         }
+        .onAppear {
+            withAnimation(.easeOut(duration: 0.5)) {
+                isAnimating = true
+            }
+        }
         .frame(minWidth: 0,
                maxWidth: .infinity,
                minHeight: 0,
@@ -66,6 +73,8 @@ public struct FruitCardView: View {
                 endPoint: .bottom
             )
         )
+        .cornerRadius(20)
+        .padding(.horizontal, 20)
     }
     
     public init() { }
