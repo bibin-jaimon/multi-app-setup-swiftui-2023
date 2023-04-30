@@ -33,6 +33,7 @@ struct FruitsListScreen: View {
                 FASettings()
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

@@ -11,6 +11,7 @@ public protocol SliderDataSource {
     var sliderImage: String { get }
     var sliderWidth: CGFloat { get }
     var accentColor: Color { get }
+    var capsuleColor: Color { get }
     
     func onEndedSliding(buttonOffset: CGFloat, buttonWidth: CGFloat)
 }
@@ -22,7 +23,7 @@ public struct Slider: View {
     
     public var body: some View {
         CapsuleContainer(width: sliderWidth,
-                         accentColor: dataSource.accentColor) {
+                         accentColor: dataSource.capsuleColor) {
             
             Text(dataSource.buttonText)
                 .font(.system(.title3, design: .rounded))
@@ -130,6 +131,10 @@ fileprivate struct CapsuleContainer<Child: View> : View {
 struct Slider_Previews: PreviewProvider {
     
     struct MockSliderDataSource: SliderDataSource {
+        var capsuleColor: Color {
+            Color(.green)
+        }
+        
         var accentColor: Color {
             Color(.systemRed)
         }

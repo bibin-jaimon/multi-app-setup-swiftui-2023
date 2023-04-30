@@ -113,6 +113,10 @@ extension OnboardingScreen {
 }
 
 extension OnboardingScreen: SliderDataSource {
+    public var capsuleColor: Color {
+        Color(.colorBlue)
+    }
+    
     public var accentColor: Color {
         Color(.colorRed)
     }

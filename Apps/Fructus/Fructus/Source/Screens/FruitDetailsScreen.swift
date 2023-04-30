@@ -45,7 +45,7 @@ struct FruitDetailsScreen: View {
     }
     
     var learnMoreView: some View {
-        Text("learn more about \(fruit.title)")
+        Text("learn more about \(fruit.title)".uppercased())
             .fontWeight(.bold)
             .foregroundColor(fruit.gradientColors.first)
     }
@@ -117,8 +117,9 @@ struct FruitDetailsScreen: View {
             .navigationBarTitle(fruit.title, displayMode: .inline)
             .navigationBarHidden(true)
             .edgesIgnoringSafeArea(.top)
+            
         }
-        
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
