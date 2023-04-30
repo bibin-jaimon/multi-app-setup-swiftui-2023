@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5796C50D29FD3F03005F9C31 /* AppStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C50C29FD3F03005F9C31 /* AppStorageManager.swift */; };
+		5796C50F29FD5E43005F9C31 /* FruitCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C50E29FD5E43005F9C31 /* FruitCellView.swift */; };
+		5796C51129FD6101005F9C31 /* FruitsListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C51029FD6101005F9C31 /* FruitsListScreen.swift */; };
+		5796C51329FD65A1005F9C31 /* FruitDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C51229FD65A1005F9C31 /* FruitDetailsScreen.swift */; };
+		5796C51729FD95F6005F9C31 /* FASettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C51629FD95F6005F9C31 /* FASettings.swift */; };
+		5796C51929FD9A4C005F9C31 /* FAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C51829FD9A4C005F9C31 /* FAButton.swift */; };
+		5796C51F29FDACDE005F9C31 /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C51E29FDACDE005F9C31 /* InfoCardView.swift */; };
 		57A0A49829EDC5BA004FF401 /* FAOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A0A49729EDC5BA004FF401 /* FAOnboardingScreen.swift */; };
+		57A0A49F29EE45B3004FF401 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A0A49E29EE45B3004FF401 /* Fruit.swift */; };
 		57CA6D9629EC4F88009F8893 /* FructusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CA6D9529EC4F88009F8893 /* FructusApp.swift */; };
 		57CA6D9829EC4F88009F8893 /* FARootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CA6D9729EC4F88009F8893 /* FARootView.swift */; };
 		57CA6D9A29EC4F8B009F8893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CA6D9929EC4F8B009F8893 /* Assets.xcassets */; };
@@ -17,7 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5796C50C29FD3F03005F9C31 /* AppStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageManager.swift; sourceTree = "<group>"; };
+		5796C50E29FD5E43005F9C31 /* FruitCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCellView.swift; sourceTree = "<group>"; };
+		5796C51029FD6101005F9C31 /* FruitsListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsListScreen.swift; sourceTree = "<group>"; };
+		5796C51229FD65A1005F9C31 /* FruitDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailsScreen.swift; sourceTree = "<group>"; };
+		5796C51629FD95F6005F9C31 /* FASettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FASettings.swift; sourceTree = "<group>"; };
+		5796C51829FD9A4C005F9C31 /* FAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAButton.swift; sourceTree = "<group>"; };
+		5796C51E29FDACDE005F9C31 /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
 		57A0A49729EDC5BA004FF401 /* FAOnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAOnboardingScreen.swift; sourceTree = "<group>"; };
+		57A0A49E29EE45B3004FF401 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		57CA6D9229EC4F88009F8893 /* Fructus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fructus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CA6D9529EC4F88009F8893 /* FructusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FructusApp.swift; sourceTree = "<group>"; };
 		57CA6D9729EC4F88009F8893 /* FARootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FARootView.swift; sourceTree = "<group>"; };
@@ -39,12 +55,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5796C50B29FD3EF2005F9C31 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5796C50C29FD3F03005F9C31 /* AppStorageManager.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		57A0A49629EDC4A1004FF401 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				57A0A49729EDC5BA004FF401 /* FAOnboardingScreen.swift */,
+				5796C51029FD6101005F9C31 /* FruitsListScreen.swift */,
+				5796C51229FD65A1005F9C31 /* FruitDetailsScreen.swift */,
+				5796C51629FD95F6005F9C31 /* FASettings.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		57A0A49D29EE45A2004FF401 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A0A49E29EE45B3004FF401 /* Fruit.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		57CA6D8929EC4F88009F8893 = {
@@ -86,6 +121,8 @@
 		57CA6DA429EC5847009F8893 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5796C50B29FD3EF2005F9C31 /* Storage */,
+				57A0A49D29EE45A2004FF401 /* Model */,
 				57A0A49629EDC4A1004FF401 /* Screens */,
 				57CA6DAE29EC5EB7009F8893 /* Views */,
 				57CA6DAB29EC5A86009F8893 /* AppAssets */,
@@ -121,6 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				57CA6DAC29EC5EB1009F8893 /* FruitCardView.swift */,
+				5796C50E29FD5E43005F9C31 /* FruitCellView.swift */,
+				5796C51829FD9A4C005F9C31 /* FAButton.swift */,
+				5796C51E29FDACDE005F9C31 /* InfoCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,9 +238,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A0A49F29EE45B3004FF401 /* Fruit.swift in Sources */,
 				57CA6DAD29EC5EB1009F8893 /* FruitCardView.swift in Sources */,
+				5796C51129FD6101005F9C31 /* FruitsListScreen.swift in Sources */,
 				57A0A49829EDC5BA004FF401 /* FAOnboardingScreen.swift in Sources */,
+				5796C50D29FD3F03005F9C31 /* AppStorageManager.swift in Sources */,
+				5796C51729FD95F6005F9C31 /* FASettings.swift in Sources */,
 				57CA6D9829EC4F88009F8893 /* FARootView.swift in Sources */,
+				5796C50F29FD5E43005F9C31 /* FruitCellView.swift in Sources */,
+				5796C51929FD9A4C005F9C31 /* FAButton.swift in Sources */,
+				5796C51329FD65A1005F9C31 /* FruitDetailsScreen.swift in Sources */,
+				5796C51F29FDACDE005F9C31 /* InfoCardView.swift in Sources */,
 				57CA6D9629EC4F88009F8893 /* FructusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

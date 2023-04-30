@@ -9,33 +9,39 @@ import SwiftUI
 
 public struct FruitCardView: View {
     private let imageShadow: Color = Color(red: 0, green: 0, blue: 0, opacity: 0.15)
+    private let fruit: Fruit
+    
+    // State
     @State private var isAnimating: Bool = false
+    
+    //AppStorage
+    @AppStorage("isOnboarded") var isOnboarded: Bool?
     
     public var body: some View {
         ZStack {
             VStack {
                 
-                Image("blueberry")
+                Image(fruit.image)
                     .resizable()
                     .scaledToFit()
                     .shadow(color: imageShadow, radius: 8, x: 6, y: 8)
                     .scaleEffect(isAnimating ? 1.0 : 0.6)
                 
-                Text("Blueberry")
+                Text(fruit.title)
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15),
                             radius: 2, x: 2, y: 2)
                 
-                Text("Blueberries are sweet, nutritious and wildy popular fruit all over the world")
+                Text(fruit.headline)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
                     .frame(maxWidth: 480)
                 
                 Button {
-                    
+                    isOnboarded = true
                 } label: {
                     HStack(spacing: 8) {
                         Text("Start")
@@ -49,7 +55,8 @@ public struct FruitCardView: View {
                     )
                 }
                 .accentColor(.white)
-
+                .padding()
+                
             } //: VStack
             .padding()
         }
@@ -65,10 +72,7 @@ public struct FruitCardView: View {
                alignment: .center)
         .background(
             LinearGradient(
-                colors: [
-                    Color("ColorBlueberryLight"),
-                    Color("ColorBlueberryDark")
-                ],
+                colors: fruit.gradientColors,
                 startPoint: .top,
                 endPoint: .bottom
             )
@@ -77,12 +81,16 @@ public struct FruitCardView: View {
         .padding(.horizontal, 20)
     }
     
-    public init() { }
+    public init(fruit: Fruit) {
+        self.fruit = fruit
+    }
 }
 
 struct FruitCardView_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
-        FruitCardView()
+        FruitCardView(fruit: getFruitMockData()[5])
             .previewLayout(.fixed(width: 320, height: 640))
     }
 }

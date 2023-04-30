@@ -8,8 +8,15 @@
 import SwiftUI
 
 public struct FARootView: View {
+    @AppStorage("isOnboarded") var isOnboarded: Bool = false
+    
     public var body: some View {
-        FAOnboardingScreen()
+        if isOnboarded {
+            FruitsListScreen(fruits: getFruitMockData())
+        }  else {
+            FAOnboardingScreen()
+        }
+        
     }
     
     public init() { }

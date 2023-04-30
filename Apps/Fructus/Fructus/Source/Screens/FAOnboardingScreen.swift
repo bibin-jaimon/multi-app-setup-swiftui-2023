@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FAOnboardingScreen: View {
+    let fruits: [Fruit] = getFruitMockData()
+    
     var body: some View {
         TabView {
-            ForEach(0 ..< 5) { item in
-                FruitCardView()
+            ForEach(fruits[0...3]) { item in
+                FruitCardView(fruit: item)
             }
         }
         .tabViewStyle(PageTabViewStyle())
