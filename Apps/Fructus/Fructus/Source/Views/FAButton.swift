@@ -27,6 +27,6 @@ struct FAButton: View {
 
 struct FAButton_Previews: PreviewProvider {
     static var previews: some View {
-        FAButton(imageName: "", handler: nil)
+        FAButton(imageName: "arrow.right", handler: nil)
     }
 }

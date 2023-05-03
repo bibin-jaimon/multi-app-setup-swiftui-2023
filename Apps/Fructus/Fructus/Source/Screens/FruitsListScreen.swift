@@ -24,10 +24,10 @@ struct FruitsListScreen: View {
                 
             }
             .listStyle(PlainListStyle())
-            .navigationTitle("Fruits")
+            .navigationTitle(FAStrings.fruits)
             .navigationBarItems(
                 trailing:
-                    FAButton(imageName: "slider.horizontal.3", handler: { isVisibleSetting = true })
+                    FAButton(imageName: ImageNames.sliderHorizontal, handler: { isVisibleSetting = true })
             )
             .sheet(isPresented: $isVisibleSetting) {
                 FASettings()

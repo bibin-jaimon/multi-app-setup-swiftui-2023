@@ -8,54 +8,74 @@
 import SwiftUI
 
 public struct FruitCardView: View {
-    private let imageShadow: Color = Color(red: 0, green: 0, blue: 0, opacity: 0.15)
+    private let shadow: Color = Color(red: 0, green: 0, blue: 0, opacity: 0.15)
     private let fruit: Fruit
     
     // State
     @State private var isAnimating: Bool = false
     
     //AppStorage
-    @AppStorage("isOnboarded") var isOnboarded: Bool?
+    @AppStorage(AppStorageKeys.isOnboarded) var isOnboarded: Bool?
+    
+    private var topImageBanner: some View {
+        Image(fruit.image)
+            .resizable()
+            .scaledToFit()
+            .shadow(color: shadow, radius: 8, x: 6, y: 8)
+            .scaleEffect(isAnimating ? 1.0 : 0.6)
+    }
+    
+    private var title: some View {
+        Text(fruit.title)
+            .foregroundColor(.white)
+            .font(.largeTitle)
+            .fontWeight(.heavy)
+            .shadow(color: shadow,
+                    radius: 2, x: 2, y: 2)
+    }
+    
+    private var headLine: some View {
+        Text(fruit.headline)
+            .foregroundColor(.white)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 16)
+            .frame(maxWidth: 480)
+    }
+    
+    private var bottomButton: some View {
+        Button {
+            isOnboarded = true
+        } label: {
+            HStack(spacing: 8) {
+                Text(FAStrings.start)
+                Image(systemName: ImageNames.arrowRightCircle)
+                    .imageScale(.large)
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 8)
+            .background(
+                Capsule().strokeBorder(.white, lineWidth: 1.25)
+            )
+        }
+    }
+    
+    private var cardBackground: some View {
+        LinearGradient(
+            colors: fruit.gradientColors,
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
     
     public var body: some View {
         ZStack {
             VStack {
-                
-                Image(fruit.image)
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(color: imageShadow, radius: 8, x: 6, y: 8)
-                    .scaleEffect(isAnimating ? 1.0 : 0.6)
-                
-                Text(fruit.title)
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15),
-                            radius: 2, x: 2, y: 2)
-                
-                Text(fruit.headline)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 16)
-                    .frame(maxWidth: 480)
-                
-                Button {
-                    isOnboarded = true
-                } label: {
-                    HStack(spacing: 8) {
-                        Text("Start")
-                        Image(systemName: "arrow.right.circle")
-                            .imageScale(.large)
-                    }
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 8)
-                    .background(
-                        Capsule().strokeBorder(.white, lineWidth: 1.25)
-                    )
-                }
-                .accentColor(.white)
-                .padding()
+                topImageBanner
+                title
+                headLine
+                bottomButton
+                    .accentColor(.white)
+                    .padding()
                 
             } //: VStack
             .padding()
@@ -70,15 +90,9 @@ public struct FruitCardView: View {
                minHeight: 0,
                maxHeight: .infinity,
                alignment: .center)
-        .background(
-            LinearGradient(
-                colors: fruit.gradientColors,
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        )
+        .background(cardBackground)
         .cornerRadius(20)
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 16)
     }
     
     public init(fruit: Fruit) {

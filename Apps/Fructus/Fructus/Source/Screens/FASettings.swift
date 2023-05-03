@@ -10,19 +10,19 @@ import SwiftUI
 struct FASettings: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @AppStorage("isOnboarded") var isOnboarded: Bool = true
+    @AppStorage(AppStorageKeys.isOnboarded) var isOnboarded: Bool = true
     
     var groupBoxHeader: some View {
         HStack {
-            Text("Fructus")
+            Text(FAStrings.fructus)
             Spacer()
-            Image(systemName: "info.circle")
+            Image(systemName: ImageNames.infoCircle)
         }
     }
     
     var navBarItemTrailing: some View {
         FAButton(
-            imageName: "xmark",
+            imageName: ImageNames.xMark,
             handler: { presentationMode.wrappedValue.dismiss() }
         )
     }
@@ -46,6 +46,7 @@ struct FASettings: View {
                 content.foregroundColor(.white)
             }
         }
+        
         struct SettingsInfoCardViewStyleDataSource: InfoCardViewStyleDataSource {
             var leftImageModifiers: some ViewModifier {
                 ImageViewModifier()
@@ -69,72 +70,79 @@ struct FASettings: View {
         }
     }
     
+    private var aboutGroup: some View {
+        GroupBox(label: groupBoxHeader) {
+            Divider().padding(.vertical, 4)
+            HStack {
+                Image(ImageNames.logo)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80)
+                    .cornerRadius(9)
+                Text(FAStrings.about)
+                    .font(.footnote)
+            }
+        }
+    }
+    
+    private var cutomizationHeading: some View {
+        HStack {
+            Text(FAStrings.customization.uppercased())
+            Spacer()
+            Image(systemName: ImageNames.paintbrush)
+        }
+        .padding(.horizontal, 2)
+        .padding(.vertical, 4)
+    }
+    
+    private var customizationBody: some View {
+        let background = Color(UIColor.tertiarySystemBackground)
+            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        return Group {
+            Text(FAStrings.resetDescription)
+                .padding(.vertical, 8)
+                .frame(minHeight: 60)
+                .layoutPriority(1)
+                .font(.footnote)
+                .multilineTextAlignment(.leading)
+            
+            Toggle(isOn: $isOnboarded) {
+                if isOnboarded {
+                    Text(FAStrings.onboarded.uppercased())
+                        .fontWeight(.bold)
+                        .foregroundColor(.green)
+                } else {
+                    Text(FAStrings.showOnboard.uppercased())
+                        .fontWeight(.bold)
+                        .foregroundColor(.gray)
+                }
+            }
+            .padding()
+            .background(background)
+        }
+    }
+    
+    private var infoViewHeading: some View {
+        HStack {
+            Text(FAStrings.application.uppercased())
+            Spacer()
+            Image(systemName: ImageNames.appsIphone)
+        }
+        .padding(.horizontal, 2)
+        .padding(.vertical, 4)
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    GroupBox(label: groupBoxHeader) {
-                        Divider().padding(.vertical, 4)
-                        HStack {
-                            Image("logo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 80)
-                                .cornerRadius(9)
-                            Text ("Most fruits are naturally low in fat, sodium, and calories. None have cholesterol. Fruits are sources of many essential nutrients, including potassium, dietary fiber, vitamins, and much more.")
-                                .font(.footnote)
-                        }
-                    }
-                    
-                    GroupBox(label: HStack {
-                        Text("Customization".uppercased())
-                        Spacer()
-                        Image(systemName: "paintbrush")
-                    }
-                        .padding(.horizontal, 2)
-                        .padding(.vertical, 4)) {
-                            Text("If you wish you can restart the application by toogle the switch in this box. That way it starts the onboarding process and you will see the welcome screen again")
-                                .padding(.vertical, 8)
-                                .frame(minHeight: 60)
-                                .layoutPriority(1)
-                                .font(.footnote)
-                                .multilineTextAlignment(.leading)
-                            
-                            Toggle(isOn: $isOnboarded) {
-                                if isOnboarded {
-                                    Text("Onboarded".uppercased())
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.green)
-                                } else {
-                                    Text("Show Onboard".uppercased())
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                            .padding()
-                            .background(
-                                Color(UIColor.tertiarySystemBackground)
-                                    .clipShape(
-                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                    )
-                            )
-                        }
-                    GroupBox {
-                        infoView
-                    } label: {
-                        HStack {
-                            Text("Applicaton".uppercased())
-                            Spacer()
-                            Image(systemName: "apps.iphone")
-                        }
-                        .padding(.horizontal, 2)
-                        .padding(.vertical, 4)
-                        
-                    }
+                    aboutGroup
+                    GroupBox(label: cutomizationHeading) { customizationBody }
+                    GroupBox { infoView } label: { infoViewHeading }
                     
                 }
                 .padding(.horizontal, 8)
-                .navigationBarTitle("Settings", displayMode: .large)
+                .navigationBarTitle(FAStrings.settings, displayMode: .large)
                 .navigationBarItems(trailing: navBarItemTrailing)
             }
         }

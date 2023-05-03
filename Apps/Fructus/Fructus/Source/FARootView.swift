@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct FARootView: View {
-    @AppStorage("isOnboarded") var isOnboarded: Bool = false
+    @AppStorage(AppStorageKeys.isOnboarded) var isOnboarded: Bool = false
     
     public var body: some View {
         if isOnboarded {

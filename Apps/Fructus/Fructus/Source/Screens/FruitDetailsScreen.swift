@@ -45,7 +45,7 @@ struct FruitDetailsScreen: View {
     }
     
     var learnMoreView: some View {
-        Text("learn more about \(fruit.title)".uppercased())
+        Text(FAStrings.learnMoreAbout(fruit.title).uppercased())
             .fontWeight(.bold)
             .foregroundColor(fruit.gradientColors.first)
     }
@@ -53,10 +53,10 @@ struct FruitDetailsScreen: View {
     var sourceLinkView: some View {
         GroupBox() {
             HStack {
-                Text("Content Source")
+                Text(FAStrings.contentSource)
                 Spacer()
-                Link("Wikipedia", destination: URL(string: "https://www.wikipedia.com")!)
-                Image(systemName: "arrow.up.right.square")
+                Link(FAStrings.wikipedia, destination: URL(string: FALinks.wikipedia)!)
+                Image(systemName: ImageNames.arrowUpRightSquare)
             }
         }
     }
@@ -76,13 +76,13 @@ struct FruitDetailsScreen: View {
         ]
 
         return GroupBox() {
-            DisclosureGroup("Nutritional value per 100g") {
+            DisclosureGroup(FAStrings.nutritionalValue) {
                 ForEach(0..<nutrients.count, id: \.self) { index in
                     Divider().padding(.vertical, 2)
                     HStack {
                         
                         Group {
-                            Image(systemName: "info.circle")
+                            Image(systemName: ImageNames.infoCircle)
                             Text(nutrients[index])
                         }
                         .foregroundColor(fruit.gradientColors.first)

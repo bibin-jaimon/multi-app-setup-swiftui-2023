@@ -10,7 +10,6 @@
 		571F434F29FE5BB200535214 /* InfoCardViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F434E29FE5BB200535214 /* InfoCardViewProtocol.swift */; };
 		571F435129FE89AD00535214 /* InfoCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F435029FE89AD00535214 /* InfoCardModel.swift */; };
 		571F435329FE8AC600535214 /* InfoCardViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F435229FE8AC600535214 /* InfoCardViewConfiguration.swift */; };
-		5796C50D29FD3F03005F9C31 /* AppStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C50C29FD3F03005F9C31 /* AppStorageManager.swift */; };
 		5796C50F29FD5E43005F9C31 /* FruitCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C50E29FD5E43005F9C31 /* FruitCellView.swift */; };
 		5796C51129FD6101005F9C31 /* FruitsListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C51029FD6101005F9C31 /* FruitsListScreen.swift */; };
 		5796C51329FD65A1005F9C31 /* FruitDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5796C51229FD65A1005F9C31 /* FruitDetailsScreen.swift */; };
@@ -25,13 +24,13 @@
 		57CA6D9D29EC4F8B009F8893 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CA6D9C29EC4F8B009F8893 /* Preview Assets.xcassets */; };
 		57CA6DAA29EC58E9009F8893 /* ElementsPluginAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 57CA6DA929EC58E9009F8893 /* ElementsPluginAPI */; };
 		57CA6DAD29EC5EB1009F8893 /* FruitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CA6DAC29EC5EB1009F8893 /* FruitCardView.swift */; };
+		7B743E9A2A02F1C9005A3525 /* FAStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B743E992A02F1C9005A3525 /* FAStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		571F434E29FE5BB200535214 /* InfoCardViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardViewProtocol.swift; sourceTree = "<group>"; };
 		571F435029FE89AD00535214 /* InfoCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardModel.swift; sourceTree = "<group>"; };
 		571F435229FE8AC600535214 /* InfoCardViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardViewConfiguration.swift; sourceTree = "<group>"; };
-		5796C50C29FD3F03005F9C31 /* AppStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageManager.swift; sourceTree = "<group>"; };
 		5796C50E29FD5E43005F9C31 /* FruitCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCellView.swift; sourceTree = "<group>"; };
 		5796C51029FD6101005F9C31 /* FruitsListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsListScreen.swift; sourceTree = "<group>"; };
 		5796C51229FD65A1005F9C31 /* FruitDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailsScreen.swift; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		57CA6D9C29EC4F8B009F8893 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57CA6DA729EC5879009F8893 /* ElementsPluginAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ElementsPluginAPI; path = ../../Plugins/ElementsPluginAPI; sourceTree = "<group>"; };
 		57CA6DAC29EC5EB1009F8893 /* FruitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCardView.swift; sourceTree = "<group>"; };
+		7B743E992A02F1C9005A3525 /* FAStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,6 @@
 		5796C50B29FD3EF2005F9C31 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				5796C50C29FD3F03005F9C31 /* AppStorageManager.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -138,6 +137,7 @@
 		57CA6DA429EC5847009F8893 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7B743E982A02F1A5005A3525 /* Resource */,
 				5796C50B29FD3EF2005F9C31 /* Storage */,
 				57A0A49D29EE45A2004FF401 /* Model */,
 				57A0A49629EDC4A1004FF401 /* Screens */,
@@ -180,6 +180,14 @@
 				5796C51829FD9A4C005F9C31 /* FAButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7B743E982A02F1A5005A3525 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7B743E992A02F1C9005A3525 /* FAStrings.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,11 +269,11 @@
 				571F435129FE89AD00535214 /* InfoCardModel.swift in Sources */,
 				571F434F29FE5BB200535214 /* InfoCardViewProtocol.swift in Sources */,
 				57A0A49829EDC5BA004FF401 /* FAOnboardingScreen.swift in Sources */,
-				5796C50D29FD3F03005F9C31 /* AppStorageManager.swift in Sources */,
 				5796C51729FD95F6005F9C31 /* FASettings.swift in Sources */,
 				57CA6D9829EC4F88009F8893 /* FARootView.swift in Sources */,
 				5796C50F29FD5E43005F9C31 /* FruitCellView.swift in Sources */,
 				5796C51929FD9A4C005F9C31 /* FAButton.swift in Sources */,
+				7B743E9A2A02F1C9005A3525 /* FAStrings.swift in Sources */,
 				571F435329FE8AC600535214 /* InfoCardViewConfiguration.swift in Sources */,
 				5796C51329FD65A1005F9C31 /* FruitDetailsScreen.swift in Sources */,
 				5796C51F29FDACDE005F9C31 /* InfoCardView.swift in Sources */,
