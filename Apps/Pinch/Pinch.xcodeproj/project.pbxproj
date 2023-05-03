@@ -154,7 +154,6 @@
 			children = (
 				579272CB29E266D3003B2809 /* Resource */,
 				57A8FE8B29C7469D00D4CBDD /* Model */,
-				57A8FE8A29C7467E00D4CBDD /* View */,
 				57A8FE8929C7467300D4CBDD /* Screen */,
 			);
 			path = Src;
@@ -166,13 +165,6 @@
 				57A8FE8C29C778EF00D4CBDD /* HomeScreen.swift */,
 			);
 			path = Screen;
-			sourceTree = "<group>";
-		};
-		57A8FE8A29C7467E00D4CBDD /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		57A8FE8B29C7469D00D4CBDD /* Model */ = {
