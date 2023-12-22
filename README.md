@@ -1,4 +1,4 @@
-# Multi app codebase setup
+# Multi app codebase setup - POC
 
 Tech stacks: Swift, SwiftUI, XCProject, XCFramework, SPM, Xcode workspace
 
