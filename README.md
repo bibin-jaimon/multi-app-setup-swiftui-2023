@@ -1,10 +1,9 @@
 # Multi app codebase setup - POC
-
+This app consist of 3 app in one workspace and possible codes are reused using SPM and XCFramework.
 Tech stacks: Swift, SwiftUI, XCProject, XCFramework, SPM, Xcode workspace
 
-- Fructs
-- Pinch
-- Restart
+## Fructs
+
 <table>
 <td width="25%">
 <img src="assets/fructus-app/animation.gif"></img>
